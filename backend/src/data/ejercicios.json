@@ -1,0 +1,54 @@
+{
+  "ejercicios": [
+    {
+      "id": "1",
+      "nombre": "Press de Banca",
+      "categoria": "pecho",
+      "descripcion": "Ejercicio para pecho con barra",
+      "imagen": "press_banca.jpg",
+      "musculos": [
+        "pecho",
+        "triceps",
+        "hombros"
+      ],
+      "nivel": "intermedio"
+    },
+    {
+      "id": "2",
+      "nombre": "Sentadillas",
+      "categoria": "piernas",
+      "descripcion": "Ejercicio básico para piernas",
+      "imagen": "squat.jpg",
+      "musculos": [
+        "cuadriceps",
+        "gluteos",
+        "core"
+      ],
+      "nivel": "principiante"
+    },
+    {
+      "id": "3",
+      "nombre": "Dominadas",
+      "categoria": "espalda",
+      "descripcion": "Ejercicio para espalda y brazos",
+      "imagen": "pull_up.jpg",
+      "musculos": [
+        "espalda",
+        "biceps",
+        "antebrazos"
+      ],
+      "nivel": "avanzado"
+    },
+    {
+      "id": "4",
+      "nombre": "4fsfsf",
+      "categoria": "piernas",
+      "descripcion": "fdsfsfsf",
+      "imagen": "1748411729667-198561149.png",
+      "musculos": [
+        "triceps"
+      ],
+      "nivel": "principiante"
+    }
+  ]
+}

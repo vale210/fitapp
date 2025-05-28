@@ -1,0 +1,35 @@
+{
+  "rutinas": [
+    {
+      "id": "1",
+      "nombre": "Rutina Principiante Full Body",
+      "descripcion": "Rutina completa para principiantes enfocada en los principales grupos musculares",
+      "nivel": "principiante",
+      "duracion": "60 minutos",
+      "dias_semana": ["lunes", "miercoles", "viernes"],
+      "ejercicios": [
+        {
+          "ejercicio_id": "2",
+          "series": 3,
+          "repeticiones": 12,
+          "descanso": "90 segundos",
+          "notas": "Mantén la espalda recta y respira adecuadamente"
+        },
+        {
+          "ejercicio_id": "1",
+          "series": 3,
+          "repeticiones": 10,
+          "descanso": "90 segundos",
+          "notas": "Comienza con peso ligero para aprender la técnica"
+        },
+        {
+          "ejercicio_id": "3",
+          "series": 2,
+          "repeticiones": 8,
+          "descanso": "120 segundos",
+          "notas": "Si es necesario, usa la máquina de asistencia"
+        }
+      ]
+    }
+  ]
+} 

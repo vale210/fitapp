@@ -1,0 +1,98 @@
+{
+  "progreso": [
+    {
+      "id": "1",
+      "usuario_id": "2",
+      "fecha": "2024-03-20",
+      "tipo": "peso",
+      "valor": 75.5,
+      "unidad": "kg"
+    },
+    {
+      "id": "2",
+      "usuario_id": "2",
+      "fecha": "2024-03-20",
+      "tipo": "ejercicio",
+      "ejercicio_id": "1",
+      "peso": 60,
+      "series": 3,
+      "repeticiones": 10
+    },
+    {
+      "id": "3",
+      "usuario_id": "2",
+      "fecha": "2025-05-28T05:23:29.923Z",
+      "tipo": "objetivo",
+      "descripcion": "fdsfsf",
+      "fecha_limite": "2025-05-07",
+      "categoria": "medidas",
+      "cumplido": true,
+      "fecha_cumplimiento": "2025-05-28T05:23:34.297Z"
+    },
+    {
+      "id": "4",
+      "usuario_id": "2",
+      "fecha": "2025-05-28T05:27:15.639Z",
+      "tipo": "peso",
+      "valor": 34
+    },
+    {
+      "id": "5",
+      "usuario_id": "1",
+      "fecha": "2025-05-28T05:42:24.422Z",
+      "tipo": "ejercicio_asignado",
+      "ejercicio_id": "2",
+      "series": 3,
+      "repeticiones": 12,
+      "notas": "fsdfsf",
+      "completado": false
+    },
+    {
+      "id": "6",
+      "usuario_id": "2",
+      "fecha": "2025-05-28T05:46:39.683Z",
+      "tipo": "ejercicio_asignado",
+      "ejercicio_id": "3",
+      "series": 10,
+      "repeticiones": 12,
+      "notas": "fdsfsf",
+      "completado": true,
+      "fecha_completado": "2025-05-28T07:09:51.930Z"
+    },
+    {
+      "id": "7",
+      "usuario_id": "2",
+      "fecha": "2025-05-28T05:56:09.335Z",
+      "tipo": "ejercicio_asignado",
+      "ejercicio_id": "4",
+      "series": 3,
+      "repeticiones": 12,
+      "notas": "fdsfsfsf",
+      "completado": true,
+      "fecha_completado": "2025-05-28T07:09:50.931Z"
+    },
+    {
+      "id": "8",
+      "usuario_id": "2",
+      "fecha": "2025-05-28T07:09:23.877Z",
+      "tipo": "ejercicio_asignado",
+      "ejercicio_id": "1",
+      "series": 3,
+      "repeticiones": 12,
+      "notas": "realizar cada repeticion adecuadamente",
+      "completado": true,
+      "fecha_completado": "2025-05-28T07:09:48.848Z"
+    },
+    {
+      "id": "9",
+      "usuario_id": "2",
+      "fecha": "2025-05-28T07:10:01.184Z",
+      "tipo": "medidas",
+      "pecho": 3243,
+      "cintura": 34,
+      "cadera": 44,
+      "brazos": 44,
+      "piernas": ""
+    }
+  ]
+}

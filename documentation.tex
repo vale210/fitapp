@@ -1,0 +1,262 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{minted}
+
+\title{Documentación Técnica - TENA\_FIT}
+\author{Angel}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introducción}
+TENA\_FIT es una aplicación completa de fitness y bienestar que integra tecnologías modernas para proporcionar una experiencia multiplataforma. Este documento técnico detalla la arquitectura, implementación y guías de desarrollo del proyecto.
+
+\section{Arquitectura del Sistema}
+
+\subsection{Frontend (React + Vite)}
+\begin{itemize}
+    \item \textbf{Framework:} React 18 con TypeScript
+    \item \textbf{Bundler:} Vite
+    \item \textbf{UI Framework:} Chakra UI
+    \item \textbf{Estado:} Context API + Custom Hooks
+    \item \textbf{Routing:} React Router DOM v6
+    \item \textbf{HTTP Client:} Axios
+\end{itemize}
+
+\subsection{Backend (Node.js)}
+\begin{itemize}
+    \item \textbf{Runtime:} Node.js
+    \item \textbf{Framework:} Express
+    \item \textbf{Base de Datos:} Sistema de archivos JSON
+    \item \textbf{Autenticación:} JWT + bcrypt
+    \item \textbf{API:} RESTful
+\end{itemize}
+
+\subsection{Aplicación Móvil (Flutter)}
+\begin{itemize}
+    \item \textbf{Framework:} Flutter SDK
+    \item \textbf{Gestión de Estado:} Provider
+    \item \textbf{Almacenamiento Local:} SQLite
+    \item \textbf{Networking:} HTTP package
+\end{itemize}
+
+\section{Base de Datos JSON}
+
+\subsection{Estructura de Archivos}
+\begin{itemize}
+    \item \texttt{/src/data/users.json} - Información de usuarios
+    \item \texttt{/src/data/ejercicios.json} - Catálogo de ejercicios
+    \item \texttt{/src/data/rutinas.json} - Rutinas predefinidas
+    \item \texttt{/src/data/progreso.json} - Seguimiento de progreso
+\end{itemize}
+
+\subsection{Esquemas JSON}
+
+\subsubsection{users.json}
+\begin{minted}{json}
+{
+  "users": [
+    {
+      "id": "string",
+      "nombre": "string",
+      "email": "string",
+      "password": "string",
+      "rol": "admin|cliente"
+    }
+  ]
+}
+\end{minted}
+
+\subsubsection{ejercicios.json}
+\begin{minted}{json}
+{
+  "ejercicios": [
+    {
+      "id": "string",
+      "nombre": "string",
+      "categoria": "string",
+      "descripcion": "string",
+      "imagen": "string",
+      "musculos": ["string"],
+      "nivel": "principiante|intermedio|avanzado"
+    }
+  ]
+}
+\end{minted}
+
+\subsubsection{rutinas.json}
+\begin{minted}{json}
+{
+  "rutinas": [
+    {
+      "id": "string",
+      "nombre": "string",
+      "descripcion": "string",
+      "nivel": "string",
+      "duracion": "string",
+      "dias_semana": ["string"],
+      "ejercicios": [
+        {
+          "ejercicio_id": "string",
+          "series": "number",
+          "repeticiones": "number",
+          "descanso": "string",
+          "notas": "string"
+        }
+      ]
+    }
+  ]
+}
+\end{minted}
+
+\subsubsection{progreso.json}
+\begin{minted}{json}
+{
+  "progreso": [
+    {
+      "id": "string",
+      "usuario_id": "string",
+      "fecha": "date",
+      "tipo": "peso|ejercicio|objetivo|ejercicio_asignado",
+      "valor": "number",
+      "unidad": "string"
+    }
+  ]
+}
+\end{minted}
+
+\section{Guía de Instalación}
+
+\subsection{Configuración del Entorno de Desarrollo}
+\begin{enumerate}
+    \item Instalar Node.js (v18.x o superior)
+    \item Instalar Flutter SDK (v3.2.3 o superior)
+    \item Configurar IDE (VS Code recomendado)
+    \item Instalar extensiones necesarias:
+        \begin{itemize}
+            \item Flutter
+            \item Dart
+            \item ES7+ React/Redux/React-Native snippets
+            \item Thunder Client (para pruebas de API)
+        \end{itemize}
+\end{enumerate}
+
+\section{API Endpoints}
+
+\subsection{Autenticación}
+\begin{itemize}
+    \item \texttt{POST /api/auth/login}
+    \item \texttt{POST /api/auth/register}
+    \item \texttt{POST /api/auth/refresh-token}
+\end{itemize}
+
+\subsection{Usuarios}
+\begin{itemize}
+    \item \texttt{GET /api/users/profile}
+    \item \texttt{PUT /api/users/profile}
+    \item \texttt{GET /api/users/statistics}
+\end{itemize}
+
+\subsection{Ejercicios}
+\begin{itemize}
+    \item \texttt{GET /api/exercises}
+    \item \texttt{POST /api/exercises}
+    \item \texttt{PUT /api/exercises/:id}
+    \item \texttt{DELETE /api/exercises/:id}
+\end{itemize}
+
+\section{Seguridad}
+
+\subsection{Autenticación}
+El sistema utiliza JWT (JSON Web Tokens) para la autenticación:
+\begin{itemize}
+    \item Access Token (15 minutos)
+    \item Refresh Token (7 días)
+    \item Passwords hasheados con bcrypt
+\end{itemize}
+
+\subsection{Variables de Entorno}
+\begin{minted}{bash}
+# Frontend (.env)
+VITE_API_URL=http://localhost:3000/api
+
+# Backend (.env)
+PORT=3000
+JWT_SECRET=your_jwt_secret
+\end{minted}
+
+\section{Credenciales de Administrador}
+\begin{minted}{text}
+Usuario: admin@tenafit.com
+Contraseña: admin123
+\end{minted}
+
+\section{Flujo de Trabajo de Desarrollo}
+
+\subsection{Branches}
+\begin{itemize}
+    \item \texttt{main} - Producción
+    \item \texttt{develop} - Desarrollo
+    \item \texttt{feature/*} - Nuevas características
+    \item \texttt{bugfix/*} - Correcciones
+\end{itemize}
+
+\subsection{Commits}
+Formato de commits:
+\begin{minted}{text}
+<tipo>(<alcance>): <descripción>
+
+tipos: feat, fix, docs, style, refactor, test, chore
+\end{minted}
+
+\section{Despliegue}
+
+\subsection{Frontend}
+\begin{minted}{bash}
+cd frontend
+npm run build
+# Los archivos de distribución estarán en /dist
+\end{minted}
+
+\subsection{Backend}
+\begin{minted}{bash}
+cd backend
+npm run build
+# Usar PM2 o similar para producción
+\end{minted}
+
+\subsection{App Móvil}
+\begin{minted}{bash}
+cd app_android
+flutter build apk --release
+# El APK estará en build/app/outputs/flutter-apk/
+\end{minted}
+
+\section{Mantenimiento}
+
+\subsection{Logs}
+\begin{itemize}
+    \item Frontend: Console logs + Sentry
+    \item Backend: Winston logger
+    \item App Móvil: Flutter logs
+\end{itemize}
+
+\subsection{Monitoreo}
+\begin{itemize}
+    \item Métricas de servidor
+    \item Rendimiento de la aplicación
+    \item Errores y crashes
+\end{itemize}
+
+\section{Conclusión}
+Esta documentación proporciona una visión general técnica del proyecto TENA\_FIT. Para más detalles específicos, consultar el código fuente y los comentarios en cada componente.
+
+\end{document} 
